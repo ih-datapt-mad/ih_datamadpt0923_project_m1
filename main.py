@@ -9,42 +9,34 @@
 
 # import library
 
-import argparse
+import modules.prog as pr
+import pandas as pd
+import requests 
+import modules.funciones as fn 
 
 
-# Script functions 
+def main (): 
+    instalaciones_df = fn.instalaciones()
+    bicipark_df = fn.bicipark_final(instalaciones_df)
+    #print('bicipark created')
+    bicimad_df = fn.bicimad_final(instalaciones_df)
+    #print(bicimad_df.columns)
+    if pr.parser().application.upper() == 'BICIMAD':
+        nearest_df =fn.nearest(instalaciones_df,bicimad_df)
 
-def enter_number(message):
-    return float(input(message))
-
-def sum_function(x1, x2):
-    return x1 + x2
-    
-def multiply_function(x1, x2):
-    return x1 * x2
-    
-
-# Argument parser function
-
-def argument_parser():
-    parser = argparse.ArgumentParser(description= 'Application for arithmetic calculations' )
-    help_message ='You have two options. Option 1: "mult" performs multiplication of two given numbers. Option 2: "sum" performs the sum of two given numbers' 
-    parser.add_argument('-f', '--function', help=help_message, type=str)
-    args = parser.parse_args()
-    return args
-
-
-# Pipeline execution
-
-if __name__ == '__main__':
-    if argument_parser().function == 'mult':
-        n1 = enter_number('Enter a number: ')
-        n2 = enter_number('Enter another number: ')
-        result = multiply_function(n1, n2)
-    elif argument_parser().function == 'sum':
-        n1 = enter_number('Enter a number: ')
-        n2 = enter_number('Enter another number: ')
-        result = sum_function(n1, n2)
+    elif pr.parser().application.upper() == 'BICIPARK':    
+        nearest_df =fn.nearest(instalaciones_df,bicipark_df)
+    #print(nearest_df)
+    if pr.parser().location != None:
+        instalacion = pr.fuzzyWuzzy_func(nearest_df,pr.parser().location)
+        print("DataFrame filtrado con fuzzywuzzy:")
+        print(instalacion)
+        filtered_df = nearest_df.loc[nearest_df['place'] == instalacion ]  
+        print(filtered_df)    
     else:
-        result = 'FATAL ERROR...you need to select the correct method'
-    print(f'The result is => {result}')
+        print(nearest_df)    
+
+    return
+    
+if __name__ == '__main__':
+    main ()

@@ -1,109 +1,138 @@
-<p align="left"><img src="https://cdn-images-1.medium.com/max/184/1*2GDcaeYIx_bQAZLxWM4PsQ@2x.png"></p>
 
-# __ih_datamadpt0923_project_m1__
+# Train and Pedal. Bicimad & Bicipark Explorer
 
-Ironhack Madrid - Data Analytics Part Time - Sep 2023 - Project Module 1
-
-## **Data:**
-
-There are 2 main datasources:
-
-- **CSV Files.** The datasets contains information from the BiciMAD stations including their location (i.e.: latitude / longitude). You may find the `.csv` files in the __data__ folder.
-
-- **API REST.** We will use the API REST from the [Portal de datos abiertos del Ayuntamiento de Madrid](https://datos.madrid.es/nuevoMadrid/swagger-ui-master-2.2.10/dist/index.html?url=/egobfiles/api.datos.madrid.es.json#/), where you can find the __Catálogo de datos__ with more than 70 datasets. The API endpoint is `https://datos.madrid.es/egob`. 
-
-> __IMPORTANT:__ These are the body corresponding to every dataset:
-
-- Alana: `/catalogo/209426-0-templos-catolicas.json`
-
-- Alberto: `/catalogo/209434-0-templos-otros.json`
-
-- Ana: `/catalogo/202162-0-instalaciones-accesibles-municip.json`
-
-- Andrew: `/catalogo/202180-0-instalaciones-accesibles-no-muni.json`
-
-- Carlos: `/catalogo/202311-0-colegios-publicos.json`
-
-- Elena: `/catalogo/203166-0-universidades-educacion.json`
-
-- Guille: `/catalogo/200215-0-instalaciones-deportivas.json`
-
-- John: `/catalogo/200304-0-centros-culturales.json`
-
-- Natalia: `/catalogo/201000-0-embajadas-consulados.json`
-
-- Rodrigo: `/catalogo/300356-0-monumentos-ciudad-madrid.json`
-
-- Sil: `/catalogo/208844-0-monumentos-edificios.json`
-
-- Silvia: `/catalogo/300614-0-centros-educativos.json`
-
-- Tere: `/catalogo/200761-0-parques-jardines.json`
-
-- Tomás: `/catalogo/212808-0-espacio-deporte.json`
+# Data Project Bicimad or Bicipark 
+## _Train and Pedal. Bicimad or Bicipark Explorer_
 
 
+Welcome to the world of sustainable mobility. We will analyze two urban initiatives: Bicimad and Biciparkd. Our goal is to facilitate communications between sports centers and bike parks and to understand how these bicycle transportation options contribute to the sustainability of our city and improve the quality of life of its inhabitants.
 
----
+Both proposals offer innovative solutions to encourage the use of bicycles as a means of transportation in urban environments.
 
-## **Main Challenge:**
+## 🙋 Name
+Bicimad & Bicipark Explorer
 
-You must create a Python App (**Data Pipeline**) that allow their potential users to find the nearest BiciMAD station to a set of places of interest using the methods included in the module `geo_calculations.py`. The output table should look similar to:
+## 👶 Status
 
-| Place of interest | Type of place (*) | Place address | BiciMAD station | Station location |
-|---------|----------|-------|------------|----------|
-| Auditorio Carmen Laforet (Ciudad Lineal)   | Centros Culturales | Calle Jazmin, 46 | Legazpi | Calle Bolívar, 3 |
-| Centro Comunitario Casino de la Reina | Centros municipales de enseñanzas artísticas | Calle Casino, 3 | Chamartin | Calle Rodríguez Jaén, 40 |
-| ...     | ...            | ...        | ...      | ...        |
-> __(*)__ This correspond to the type of place assigned to you. 
+## 🏃 One-liner
+Explore the world of urban cycling with Bicimad & Bicipark Explorer a project to analyze and visualize data from two prominent bike-sharing initiatives.
 
-
-**Your project must meet the following requirements:**
-
-- It must be contained in a GitHub repository which includes a README file that explains the aim and content of your code. You may follow the structure suggested [here](https://github.com/potacho/data-project-template).
-
-- __It must create, at least, a `.csv` file including the requested table (i.e. Main Challenge).__ Alternatively, you may create an image, pdf, plot or any other output format that you may find convenient. You may also send your output by e-mail, upload it to a cloud repository, etc. 
-
-- It must provide, at least, two options for the final user to select when executing using `argparse`: **(1)** To get the table for every 'Place of interest' included in the dataset (or a set of them), **(2)** To get the table for a specific 'Place of interest' imputed by the user.
+## 💻 Technology stack
+- Python3
+- Json
+- Pandas as pd
+- Requests
+- Numpy as np
+- Fuzz and process from fuzzywuzzy
+- Argparse
 
 
-**Additionally:**
+## 💥 Core technical concepts and inspiration
+The objective of Bicimad & Bicipark Explorer is to provide a complete overview of bicycle parking near our sports facilities, allowing users to compare and contrast the availability of Bicimad and Bicipark. The project is inspired by the growing importance of sustainable urban mobility and the need for instant information on this data.
 
-- You must prepare a 4 minutes presentation (ppt, canva, etc.) to explain your project (Instructors will provide further details about the content of the presentation).
+We use geolocation techniques to provide accurate results based on the user's location. This allows us to identify and visualize the nearest sports facilities and bike stations in real time.
 
-- The last slide of your presentation must include your candidate for the **'Ironhack Data Code Beauty Pageant'**. 
+We implement fuzzy matching algorithms to improve search capabilities. These algorithms allow us to find approximate matches between text strings, making it easier to identify locations even when there are typos or differences in naming.
 
+## 🔧 Configuration
+Requirements
+- Python3 
+- Json
+- Pandas as pd
+- Requests
+- Numpy as np
+- Fuzz and process from fuzzywuzzy
+- Argparse 
 
----
+Prerequisites
+- Python:
+Bicimad & Bicipark Explorer is built using Python. Make sure you have Python installed on your system. You can download it from python.org.
+- Pandas:
+Bicimad & Bicipark Explorer relies on the Pandas library for data manipulation. Install it using the command:
+```sh
+pip install pandas
+```
+- FuzzyWuzzy:
+FuzzyWuzzy is used for fuzzy string matching. Install it using the command:
+```sh
+pip install fuzzywuzzy
+```
+Installation Instructions:
 
-### **Bonus 1:**
+- Clone the Repository:
+Clone this repository to your local machine using the following command:
+```sh
+git clone [repository_url]
+```
+- Navigate to the Project Directory:
+Change your working directory to the project folder:
+``` sh
+cd [project_folder]
+```
+- Install Dependencies:
+Install the project dependencies by running the following command:
+```sh
+pip install -r requirements.txt
+```
+- Run the Application:
+Execute the main script to run the Bicimad & Bicipark Explorer:
+```sh
+python script.py -a [application] -l [ocation]
+```
+## 🙈 Usage
+Parameters
+- Application: Choose between Bicimad or Bicipark.
+- Location (optional): Specify a location to filter results using fuzzy matching.
 
-You may include in your table the availability of bikes in each station.
+Examples
 
----
+Explore Bicimad:
 
-### **Bonus 2:**
+```sh
+python script.py -a BICIMAD
+```
+Explore Bicipark and filter by location "Parque":
 
-You may improve the usability of your app by using [FuzzyWuzzy](https://pypi.org/project/fuzzywuzzy/).
+```sh
+python script.py -a BICIPARK -l "Parque"
+```
 
----
+## 📁 Folder Structure
 
-### **Bonus 3:**
+└── __h_datamadpt0923_project_m1__
 
-Feel free to enrich your output data with any data you may find relevant (e.g.: wiki info for every place of interest) or connect to the [BiciMAD API](https://mobilitylabs.emtmadrid.es/) and update bikes availability realtime or find a better way to calculate distances...there's no limit!!!
+    ├── _wip_ 
+    ├── modules
+    ├── __pycache__
+    │   └──  funciones.py
+    |   └──  geo_calculations.py
+    |   └── prog.py
+    ├── notebooks
+    │   ├── ipynb_checkpoints
+    │   └── bicimad.ipynb 
+    |   └── dev_notebook_ipynb
+    ├── .gitignore
+    ├── LICENSE
+    ├── main.py
+    ├── README
+    ├── __trash__
+    ├──  data
+        ├── bicimad_data.csv
+        ├── bicimad_stations.csv
+        ├── bicipark_data.csv
+        └── bicipark_stations.csv
 
---- 
+## 💩 ToDo
+Implement fuzzy matching for better location filtering.
 
+Handle additional user input. 
 
-## **Project Main Stack**
+## ℹ️ Further Info
 
-- [Requests](https://requests.readthedocs.io/)
+Credits: 
+- Open Data sources for Bicimad and Bicipark.
 
-- [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
-
-- Module `geo_calculations.py`
-
-- [Argparse](https://docs.python.org/3.9/library/argparse.html)
+- Open data sources for sports centers 
 
 
 
