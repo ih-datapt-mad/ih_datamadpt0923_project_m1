@@ -19,10 +19,12 @@ Explore the world of urban cycling with Bicimad & Bicipark Explorer a project to
 
 ## 💻 Technology stack
 - Python3
+- Json
 - Pandas as pd
 - Requests
 - Numpy as np
 - Fuzz and process from fuzzywuzzy
+- Argparse
 
 
 ## 💥 Core technical concepts and inspiration
@@ -35,10 +37,12 @@ We implement fuzzy matching algorithms to improve search capabilities. These alg
 ## 🔧 Configuration
 Requirements
 - Python3 
+- Json
 - Pandas as pd
 - Requests
 - Numpy as np
 - Fuzz and process from fuzzywuzzy
+- Argparse 
 
 Prerequisites
 - Python:
